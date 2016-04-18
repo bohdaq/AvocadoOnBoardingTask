@@ -21,7 +21,7 @@
               name: 'clean house',
               selected: false
             }
-          ]
+          ];
         }
       }
     }
