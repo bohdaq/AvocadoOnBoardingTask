@@ -29,8 +29,6 @@ var crypto = require('crypto');
 var jshint = require('gulp-jshint');
 var ensureFiles = require('./tasks/ensure-files.js');
 
-var jsonServer = require('gulp-json-srv');
-
 var paths = {
   js: ['./app/scripts/**/*.js', './app/elements/**/*.js']
 }
@@ -221,7 +219,7 @@ gulp.task('clean', function() {
 });
 
 // Watch files for changes & reload
-gulp.task('serve', ['jshint', 'mocksrv', 'styles'], function() {
+gulp.task('serve', ['jshint', 'styles'], function() {
   browserSync({
     port: 5000,
     notify: false,
@@ -307,13 +305,6 @@ gulp.task('jshint', function(){
   return gulp.src(paths.js)
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
-});
-
-gulp.task('mocksrv', function () {
-  jsonServer.start({
-    data: 'demo-server/db.json',
-    port: 5005
-  });
 });
 
 // Load tasks for web-component-tester

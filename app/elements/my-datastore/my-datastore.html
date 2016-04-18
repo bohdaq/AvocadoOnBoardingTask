@@ -9,9 +9,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
 
 <dom-module id="my-datastore">
-  <template></template>
+  <template>
+    <iron-ajax auto url="../../configuration.json" handle-as="json" last-response="{{configuration}}"></iron-ajax>
+  </template>
 
   <script src="my-datastore.js"></script>
 </dom-module>

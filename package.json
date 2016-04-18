@@ -30,8 +30,6 @@
     "vulcanize": ">= 1.4.2",
     "jshint": ">= 2.8.0",
     "gulp-jshint": ">= 2.0.0",
-    "json-server": "~0.7.25",
-    "gulp-json-srv": "~0.2.0",
     "web-component-tester": "^4.0.0"
   },
   "scripts": {

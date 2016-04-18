@@ -1,0 +1,22 @@
+[
+    {
+      "name": "text input",
+      "selected": true
+    },
+    {
+      "name": "numeric input",
+      "selected": true
+    },
+    {
+      "name": "dropdown",
+      "selected": false
+    },
+    {
+      "name": "date picker",
+      "selected": false
+    },
+    {
+      "name": "money picker",
+      "selected": false
+    }
+]
