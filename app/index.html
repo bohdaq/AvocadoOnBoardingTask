@@ -79,18 +79,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
           <a data-route="home" href="{{baseUrl}}">
             <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
+            <span>Configuration</span>
           </a>
 
           <a data-route="users" href="{{baseUrl}}users">
             <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+            <span>Display</span>
           </a>
 
-          <a data-route="contact" href="{{baseUrl}}contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -117,6 +113,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home" tabindex="-1">
+              <h1 class="page-title" tabindex="-1">Configuration</h1>
               <paper-material elevation="1">
                 <my-list configuration="{{configuration}}"></my-list>
                 <my-datastore configuration="{{configuration}}"></my-datastore>
