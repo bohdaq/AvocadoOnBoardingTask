@@ -102,10 +102,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <span class="space"></span>
 
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
-
           <!-- Application name -->
           <div class="middle middle-container">
             <div class="app-name">Onboarding Task</div>
@@ -122,7 +118,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home" tabindex="-1">
               <paper-material elevation="1">
-                <my-greeting></my-greeting>
                 <my-list configuration="{{configuration}}"></my-list>
                 <my-datastore configuration="{{configuration}}"></my-datastore>
               </paper-material>

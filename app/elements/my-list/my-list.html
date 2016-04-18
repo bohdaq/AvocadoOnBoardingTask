@@ -23,8 +23,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         @apply(--paper-font-body1);
       }
     </style>
+
+    <label for="greeting-input">Filter: </label>
+    <input id="greeting-input" value="{{filterVal::input}}">
+
     <ul>
-      <template is="dom-repeat" items="{{configuration}}" as="item">
+      <template
+        is="dom-repeat"
+        items="{{configuration}}"
+        as="item"
+        filter="{{_filter(filterVal)}}"
+      >
         <li>
           <paper-checkbox checked="{{item.selected}}">
               {{item.name}}
