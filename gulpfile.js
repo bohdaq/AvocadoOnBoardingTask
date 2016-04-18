@@ -26,7 +26,12 @@ var glob = require('glob-all');
 var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
+var jshint = require('gulp-jshint');
 var ensureFiles = require('./tasks/ensure-files.js');
+
+var paths = {
+  js: ['./app/scripts/**/*.js', './app/elements/**/*.js']
+}
 
 // var ghPages = require('gulp-gh-pages');
 
@@ -214,7 +219,7 @@ gulp.task('clean', function() {
 });
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles'], function() {
+gulp.task('serve', ['jshint', 'styles'], function() {
   browserSync({
     port: 5000,
     notify: false,
@@ -267,7 +272,7 @@ gulp.task('serve:dist', ['default'], function() {
 });
 
 // Build production files, the default task
-gulp.task('default', ['clean'], function(cb) {
+gulp.task('default', ['jshint', 'clean'], function(cb) {
   // Uncomment 'cache-config' if you are going to use service workers.
   runSequence(
     ['ensureFiles', 'copy', 'styles'],
@@ -294,6 +299,12 @@ gulp.task('deploy-gh-pages', function() {
       silent: true,
       branch: 'gh-pages'
     }), $.ghPages()));
+});
+
+gulp.task('jshint', function(){
+  return gulp.src(paths.js)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 // Load tasks for web-component-tester
