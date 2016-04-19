@@ -108,21 +108,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div class="bottom-title">By Bogdan</div>
           </div>
         </paper-toolbar>
-
         <!-- Main Content -->
+        <my-datastore configuration="{{configuration}}"></my-datastore>
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home" tabindex="-1">
               <h1 class="page-title" tabindex="-1">Configuration</h1>
               <paper-material elevation="1">
                 <my-list configuration="{{configuration}}"></my-list>
-                <my-datastore configuration="{{configuration}}"></my-datastore>
               </paper-material>
             </section>
 
             <section data-route="display" tabindex="-1">
               <paper-material elevation="1">
                 <h1 class="page-title" tabindex="-1">Display</h1>
+                <my-display
+                  filter-by="selected"
+                  configuration="{{configuration}}">
+                </my-display>
               </paper-material>
             </section>
 
