@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html" />
+
+<dom-module id="my-config-item">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      span {
+        @apply(--paper-font-body1);
+      }
+    </style>
+
+    <paper-checkbox checked="{{item.selected}}">
+        {{item.name}}
+    </paper-checkbox>
+  </template>
+
+  <script src="my-config-item.js"></script>
+</dom-module>

@@ -14,16 +14,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="my-list">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-
-      span {
-        @apply(--paper-font-body1);
-      }
-    </style>
-
     <label for="greeting-input">Filter: </label>
     <input id="greeting-input" value="{{filterVal::input}}">
 
@@ -32,13 +22,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         is="dom-repeat"
         items="{{configuration}}"
         as="item"
-        filter="{{_filter(filterVal)}}"
-      >
-        <li>
-          <paper-checkbox checked="{{item.selected}}">
-              {{item.name}}
-          </paper-checkbox>
-        </li>
+        filter="{{_filter(filterVal)}}">
+          <my-config-item item="{{item}}"></my-config-item>
       </template>
     </ul>
   </template>

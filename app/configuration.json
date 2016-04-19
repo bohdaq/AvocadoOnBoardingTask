@@ -1,7 +1,8 @@
 [
     {
       "name": "text input",
-      "selected": true
+      "selected": true,
+      "value": ""
     },
     {
       "name": "numeric input",
