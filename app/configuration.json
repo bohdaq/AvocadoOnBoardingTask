@@ -1,23 +1,28 @@
 [
     {
       "name": "text input",
+      "type": "text",
       "selected": true,
       "value": ""
     },
     {
       "name": "numeric input",
+      "type": "number",
       "selected": true
     },
     {
       "name": "dropdown",
+      "type": "dropdown",
       "selected": false
     },
     {
       "name": "date picker",
+      "type": "datepicker",
       "selected": false
     },
     {
-      "name": "money picker",
+      "name": "money input",
+      "type": "moneyinput",
       "selected": false
     }
 ]
