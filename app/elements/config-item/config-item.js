@@ -2,6 +2,6 @@
   'use strict';
 
   Polymer({
-    is: 'my-config-item',
+    is: 'config-item',
   });
 })();

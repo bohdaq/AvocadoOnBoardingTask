@@ -2,6 +2,6 @@
   'use strict';
 
   Polymer({
-    is: 'my-display-item'
+    is: 'display-item'
   });
 })();

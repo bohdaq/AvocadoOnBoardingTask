@@ -1,8 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
-<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html" />
+<link rel="import" href="../../bower_components/paper-input/paper-input.html" />
 
-<dom-module id="my-config-item">
+<dom-module id="display-item">
   <template>
     <style>
       :host {
@@ -13,11 +13,8 @@
         @apply(--paper-font-body1);
       }
     </style>
-
-    <paper-checkbox checked="{{item.selected}}">
-        {{item.name}}
-    </paper-checkbox>
+    <paper-input label="{{item.name}}"></paper-input>
   </template>
 
-  <script src="my-config-item.js"></script>
+  <script src="display-item.js"></script>
 </dom-module>

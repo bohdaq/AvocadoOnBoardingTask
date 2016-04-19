@@ -2,7 +2,7 @@
   'use strict';
 
   Polymer({
-    is: 'my-list',
+    is: 'config-view',
 
     _filter: function(val) {
       return function(item) {

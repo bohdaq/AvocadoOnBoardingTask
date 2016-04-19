@@ -2,7 +2,7 @@
   'use strict';
 
   Polymer({
-    is: 'my-datastore',
+    is: 'datastore-service',
 
     properties: {
       configuration: {

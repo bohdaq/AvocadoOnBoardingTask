@@ -2,10 +2,10 @@
   'use strict';
 
   Polymer({
-    is: 'my-display',
+    is: 'display-view',
 
     filterBy: {
-      type: String,
+      type: String
     },
 
     _filter: function (filterBy) {
@@ -16,7 +16,7 @@
         else {
           return false;
         }
-      }
+      };
     }
   });
 })();
