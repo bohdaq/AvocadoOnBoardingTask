@@ -13,6 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html" />
 <link rel="import" href="../../bower_components/paper-input/paper-input.html" />
 
+
 <dom-module id="my-display">
   <template>
     <style>
@@ -34,7 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         observe="selected"
       >
         <li>
-          <paper-input label="{{item.name}}"></paper-input>
+          <my-display-item item="{{item}}"></my-display-item>
         </li>
       </template>
     </ul>

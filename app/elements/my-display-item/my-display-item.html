@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html" />
+
+<dom-module id="my-display-item">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      span {
+        @apply(--paper-font-body1);
+      }
+    </style>
+    <paper-input label="{{item.name}}"></paper-input>
+  </template>
+
+  <script src="my-display-item.js"></script>
+</dom-module>
