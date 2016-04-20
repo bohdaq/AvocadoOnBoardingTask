@@ -38,6 +38,12 @@
       <paper-date-picker></paper-date-picker>
     </template>
 
+    <template is="dom-if" if="{{_isMoneypicker(item.type)}}">
+      <paper-input label="total">
+        <div prefix>$</div>
+      </paper-input>
+    </template>
+
   </template>
 
   <script src="display-item.js"></script>

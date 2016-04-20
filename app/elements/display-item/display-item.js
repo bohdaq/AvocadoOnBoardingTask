@@ -26,6 +26,12 @@
       if (type === 'datepicker')
         return true;
       return false;
+    },
+
+    _isMoneypicker: function (type) {
+      if (type === 'moneypicker')
+        return true;
+      return false;
     }
   });
 })();
