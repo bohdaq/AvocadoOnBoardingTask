@@ -10,28 +10,24 @@
       restamp: true
     },
 
-    _isTextOrNumberType: function (type) {
-      if (type === 'text' || type === 'number')
-        return true;
-      return false;
+    _isText: function (type) {
+      return type === 'text';
+    },
+
+    _isNumber: function (type) {
+      return type === 'number';
     },
 
     _isDropdown: function (type) {
-      if (type === 'dropdown')
-        return true;
-      return false;
+      return type === 'dropdown'
     },
 
     _isDatepicker: function (type) {
-      if (type === 'datepicker')
-        return true;
-      return false;
+      return type === 'datepicker'
     },
 
     _isMoneypicker: function (type) {
-      if (type === 'moneypicker')
-        return true;
-      return false;
+      return type === 'moneypicker'
     }
   });
 })();
