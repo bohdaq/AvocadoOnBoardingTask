@@ -2,8 +2,7 @@
     {
       "name": "text input",
       "type": "text",
-      "selected": true,
-      "value": ""
+      "selected": true
     },
     {
       "name": "numeric input",
@@ -14,16 +13,16 @@
       "name": "dropdown example",
       "type": "dropdown",
       "options": ["Option One", "Option Two", "Option Three"],
-      "selected": false
+      "selected": true
     },
     {
       "name": "date picker",
       "type": "datepicker",
-      "selected": false
+      "selected": true
     },
     {
       "name": "money input",
       "type": "moneyinput",
-      "selected": false
+      "selected": true
     }
 ]

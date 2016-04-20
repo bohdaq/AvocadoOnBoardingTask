@@ -2,6 +2,9 @@
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html" />
 <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
+<link rel="import" href="../../bower_components/polymer-paper-date-picker/paper-date-picker.html" />
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html" />
+<link rel="import" href="../../bower_components/paper-button/paper-button.html" />
 
 <dom-module id="display-item">
   <template>
@@ -29,6 +32,10 @@
           </template>
         </paper-menu>
       </paper-dropdown-menu>
+    </template>
+
+    <template is="dom-if" if="{{_isDatepicker(item.type)}}">
+      <paper-date-picker></paper-date-picker>
     </template>
 
   </template>
