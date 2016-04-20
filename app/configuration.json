@@ -11,8 +11,9 @@
       "selected": true
     },
     {
-      "name": "dropdown",
+      "name": "dropdown example",
       "type": "dropdown",
+      "options": ["Option One", "Option Two", "Option Three"],
       "selected": false
     },
     {

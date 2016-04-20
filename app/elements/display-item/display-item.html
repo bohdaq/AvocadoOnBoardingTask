@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html" />
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
 
 <dom-module id="display-item">
   <template>
@@ -13,7 +14,23 @@
         @apply(--paper-font-body1);
       }
     </style>
-    <paper-input type="{{item.type}}" label="{{item.name}}"></paper-input>
+    <template is="dom-if" if="{{_isTextOrNumberType(item.type)}}">
+      <paper-input type="{{item.type}}" label="{{item.name}}"></paper-input>
+    </template>
+
+    <template is="dom-if" if="{{_isDropdown(item.type)}}">
+      <paper-dropdown-menu label="{{item.name}}">
+        <paper-menu class="dropdown-content">
+          <template
+            is="dom-repeat"
+            items="{{item.options}}"
+            as="option">
+             <paper-item>{{option}}</paper-item>
+          </template>
+        </paper-menu>
+      </paper-dropdown-menu>
+    </template>
+
   </template>
 
   <script src="display-item.js"></script>
