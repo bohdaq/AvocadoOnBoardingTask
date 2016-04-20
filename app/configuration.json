@@ -33,6 +33,11 @@
     {
       "name": "Try typing 15 or 22",
       "type": "moneypicker",
-      "selected": true
+      "selected": true,
+      "validation": {
+        "min": 18,
+        "errorMessage": "Less than 18",
+        "autoValidate": true
+      }
     }
 ]

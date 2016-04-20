@@ -58,14 +58,13 @@
       <paper-input
         label="{{item.name}}"
         type="number"
-        auto-validate
-        min="18"
-        max="99"
+        auto-validate="{{item.validation.autoValidate}}"
+        min="{{item.validation.min}}"
+        error-message="{{item.validation.errorMessage}}"
       >
          <div prefix>$</div>
       </paper-input>
     </template>
-
   </template>
 
   <script src="display-item.js"></script>
