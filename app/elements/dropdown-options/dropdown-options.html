@@ -1,0 +1,19 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
+
+<dom-module id="dropdown-options">
+  <template>
+    <paper-dropdown-menu label="{{item.name}}">
+      <paper-menu class="dropdown-content">
+        <template
+          is="dom-repeat"
+          items="{{item.options}}"
+          as="option">
+           <paper-item>{{option}}</paper-item>
+        </template>
+      </paper-menu>
+    </paper-dropdown-menu>
+  </template>
+  <script src="dropdown-options.js"></script>
+</dom-module>
