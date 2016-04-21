@@ -1,0 +1,16 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html" />
+
+<dom-module id="text-input">
+  <template>
+    <paper-input
+      type="{{item.type}}"
+      label="{{item.name}}"
+      auto-validate="{{item.validation.autoValidate}}"
+      pattern="{{item.validation.pattern}}"
+      error-message="{{item.validation.errorMessage}}">
+    </paper-input>
+  </template>
+  <script src="text-input.js"></script>
+</dom-module>
