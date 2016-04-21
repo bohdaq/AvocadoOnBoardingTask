@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>text input test</title>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="../bower_components/web-component-tester/browser.js"></script>
+
+  <!-- Import the element to test -->
+  <link rel="import" href="../elements/text-input/text-input.html">
+
+</head>
+<body>
+  <test-fixture id="basic">
+    <template>
+      <text-input></text-input>
+    </template>
+  </test-fixture>
+  <script>
+    suite('text-input', function () {
+      var textInput, header;
+
+      setup(function() {
+        textInput = fixture('basic');
+      });
+      test('text-input rendered on page', function () {
+        assert.isOk(textInput, "Not Rendered");
+      });
+    });
+  </script>
+</body>
+</html>
