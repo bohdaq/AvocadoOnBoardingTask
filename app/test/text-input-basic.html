@@ -5,27 +5,34 @@
   <title>text input test</title>
 
   <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+
   <script src="../bower_components/web-component-tester/browser.js"></script>
+  <script src="../bower_components/test-fixture/test-fixture-mocha.js"></script>
+
+  <link rel="import" href="../bower_components/test-fixture/test-fixture.html">
+
 
   <!-- Import the element to test -->
   <link rel="import" href="../elements/text-input/text-input.html">
 
 </head>
 <body>
-  <test-fixture id="basic">
+  <test-fixture id="text-input-fixture">
     <template>
       <text-input></text-input>
     </template>
   </test-fixture>
   <script>
     suite('text-input', function () {
-      var textInput, header;
+      var textInput;
 
       setup(function() {
-        textInput = fixture('basic');
+        textInput = fixture('text-input-fixture');
       });
-      test('text-input rendered on page', function () {
-        assert.isOk(textInput, "Not Rendered");
+      test('text-input rendered on page and all fields item fields populated', function () {
+        expect(textInput).to.be.ok;
+        assert.isOk(textInput, "text input should render on page");
       });
     });
   </script>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>text input test</title>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+
+  <script src="../bower_components/web-component-tester/browser.js"></script>
+  <script src="../bower_components/test-fixture/test-fixture-mocha.js"></script>
+
+  <link rel="import" href="../bower_components/test-fixture/test-fixture.html">
+
+
+  <!-- Import the element to test -->
+  <link rel="import" href="../elements/config-view/config-view.html">
+
+</head>
+<body>
+  <test-fixture id="config-view-fixture">
+    <template>
+      <config-view></config-view>
+    </template>
+  </test-fixture>
+  <script>
+    suite('config-view-fixture', function () {
+      var configView;
+
+      setup(function() {
+        configView = fixture('config-view-fixture');
+        configView.items = [
+          {
+            "name": "text input requires letter only",
+            "type": "text",
+            "selected": true,
+            "validation": {
+              "pattern": "[a-zA-Z]*",
+              "errorMessage": "Invalid input",
+              "autoValidate": true
+            }
+          },
+          {
+            "name": "numeric input w/ validation rule > 18",
+            "type": "number",
+            "selected": true,
+            "validation": {
+              "min": 18,
+              "errorMessage": "Less than 18",
+              "autoValidate": true
+            }
+          },
+          {
+            "name": "dropdown example",
+            "type": "dropdown",
+            "options": ["Option One", "Option Two", "Option Three"],
+            "selected": true
+          },
+          {
+            "name": "date picker",
+            "type": "datepicker",
+            "selected": true
+          },
+          {
+            "name": "Try typing 15 or 22",
+            "type": "moneypicker",
+            "selected": true,
+            "validation": {
+              "min": 18,
+              "errorMessage": "Less than 18",
+              "autoValidate": true
+            }
+          }
+        ];
+      });
+      test('config-view rendered on page and all fields item checkboxes populated', function () {
+        flush(function() {
+          expect(configView).to.be.ok;
+          var listItems = Polymer.dom(list.root).querySelectorAll('#checkboxContainer');
+          assert.equal(configView.items.length, listItems.length);
+          done();
+        });
+      });
+
+      test('config-view filtering works showing only items that contains the filter value', function () {
+        configView.filterVal = 'te';
+        flush(function() {
+          expect(configView).to.be.ok;
+
+          //expected number of items after filtering
+          var expectedItemsCount = 2;
+
+          var listItems = Polymer.dom(list.root).querySelectorAll('#checkboxContainer');
+          assert.equal(expectedItemsCount, listItems.length);
+          done();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
