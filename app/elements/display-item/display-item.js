@@ -19,15 +19,15 @@
     },
 
     _isDropdown: function (type) {
-      return type === 'dropdown'
+      return type === 'dropdown';
     },
 
     _isDatepicker: function (type) {
-      return type === 'datepicker'
+      return type === 'datepicker';
     },
 
     _isMoneypicker: function (type) {
-      return type === 'moneypicker'
+      return type === 'moneypicker';
     }
   });
 })();
