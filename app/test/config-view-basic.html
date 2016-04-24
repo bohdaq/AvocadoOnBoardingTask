@@ -5,14 +5,8 @@
   <title>text input test</title>
 
   <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="../bower_components/polymer/polymer.html">
 
   <script src="../bower_components/web-component-tester/browser.js"></script>
-  <script src="../bower_components/test-fixture/test-fixture-mocha.js"></script>
-
-  <link rel="import" href="../bower_components/test-fixture/test-fixture.html">
-
-
   <!-- Import the element to test -->
   <link rel="import" href="../elements/config-view/config-view.html">
 
@@ -27,9 +21,9 @@
     suite('config-view-fixture', function () {
       var configView;
 
-      setup(function() {
+      setup(function(done) {
         configView = fixture('config-view-fixture');
-        configView.items = [
+        configView.configuration = [
           {
             "name": "text input requires letter only",
             "type": "text",
@@ -72,25 +66,24 @@
             }
           }
         ];
-      });
-      test('config-view rendered on page and all fields item checkboxes populated', function () {
-        flush(function() {
-          expect(configView).to.be.ok;
-          var listItems = Polymer.dom(list.root).querySelectorAll('#checkboxContainer');
-          assert.equal(configView.items.length, listItems.length);
+        flush(function () {
           done();
         });
       });
 
-      test('config-view filtering works showing only items that contains the filter value', function () {
+      test('Show all checkboxes', function() {
         configView.filterVal = 'te';
+        expectedItemsCount = 5;
+        listItems = Polymer.dom(configView.root).querySelectorAll('config-item');
+        assert.equal(expectedItemsCount, listItems.length);
+      });
+
+      test('Filter value should hide some checkboxes', function(done) {
+        configView.filterVal = 'te';
+
         flush(function() {
-          expect(configView).to.be.ok;
-
-          //expected number of items after filtering
-          var expectedItemsCount = 2;
-
-          var listItems = Polymer.dom(list.root).querySelectorAll('#checkboxContainer');
+          expectedItemsCount = 2;
+          listItems = Polymer.dom(configView.root).querySelectorAll('config-item');
           assert.equal(expectedItemsCount, listItems.length);
           done();
         });

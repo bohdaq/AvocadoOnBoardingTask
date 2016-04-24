@@ -11,6 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 
+<link rel="import" href="../display-item/display-item.html">
 
 <dom-module id="display-view">
   <template>
@@ -30,8 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         items="{{configuration}}"
         as="item"
         filter="{{_filter(filterBy)}}"
-        observe="selected"
-      >
+        observe="selected">
         <display-item item="{{item}}"></display-item>
       </template>
     </ul>
