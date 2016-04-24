@@ -1,10 +1,13 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
-<link rel="import" href="../dropdown-options/dropdown-options.html" />
 <link rel="import" href="../../bower_components/polymer-paper-date-picker/paper-date-picker.html" />
 <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html" />
 <link rel="import" href="../../bower_components/paper-button/paper-button.html" />
 <link rel="import" href="../../bower_components/paper-input/paper-input.html" />
+<link rel="import" href="../dropdown-options/dropdown-options.html" />
+<link rel="import" href="../text-input/text-input.html" />
+<link rel="import" href="../number-input/number-input.html" />
+<link rel="import" href="../money-input/money-input.html" />
 
 <dom-module id="display-item">
   <template>
@@ -18,23 +21,11 @@
       }
     </style>
     <template is="dom-if" if="{{_isText(item.type)}}">
-      <paper-input
-        type="{{item.type}}"
-        label="{{item.name}}"
-        auto-validate="{{item.validation.autoValidate}}"
-        pattern="{{item.validation.pattern}}"
-        error-message="{{item.validation.errorMessage}}"
-      ></paper-input>
+      <text-input item="{{item}}"></text-input>
     </template>
 
     <template is="dom-if" if="{{_isNumber(item.type)}}">
-      <paper-input
-        type="{{item.type}}"
-        label="{{item.name}}"
-        auto-validate="{{item.validation.autoValidate}}"
-        min="{{item.validation.min}}"
-        error-message="{{item.validation.errorMessage}}"
-      ></paper-input>
+      <number-input item="{{item}}"></number-input>
     </template>
 
     <template is="dom-if" if="{{_isDropdown(item.type)}}">
@@ -46,14 +37,8 @@
     </template>
 
     <template is="dom-if" if="{{_isMoneypicker(item.type)}}">
-      <paper-input
-        label="{{item.name}}"
-        type="number"
-        auto-validate="{{item.validation.autoValidate}}"
-        min="{{item.validation.min}}"
-        error-message="{{item.validation.errorMessage}}">
-         <div prefix>$</div>
-      </paper-input>
+      <money-input item="{{item}}"></money-input>
+
     </template>
   </template>
 

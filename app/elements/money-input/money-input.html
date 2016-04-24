@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html" />
+
+<dom-module id="money-input">
+  <template>
+    <paper-input
+      label="{{item.name}}"
+      type="number"
+      auto-validate="{{item.validation.autoValidate}}"
+      min="{{item.validation.min}}"
+      error-message="{{item.validation.errorMessage}}">
+      <div prefix>$</div>
+    </paper-input>
+  </template>
+  <script src="money-input.js"></script>
+</dom-module>

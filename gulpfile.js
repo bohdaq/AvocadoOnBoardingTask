@@ -31,7 +31,7 @@ var ensureFiles = require('./tasks/ensure-files.js');
 
 var paths = {
   js: ['./app/scripts/**/*.js', './app/elements/**/*.js']
-}
+};
 
 // var ghPages = require('gulp-gh-pages');
 
