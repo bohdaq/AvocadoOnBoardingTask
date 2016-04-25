@@ -7,7 +7,7 @@
     properties: {
       // forces the dom reflect the dom-if and not hiding instead.
       // slows a bit perfomance but logically is more correct
-      restamp: true
+      restamp: false
     },
 
     _isText: function (type) {

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>display-view test</title>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="../bower_components/web-component-tester/browser.js"></script>
+
+  <link rel="import" href="../elements/display-view/display-view.html">
+</head>
+<body>
+<test-fixture id="display-view-fixture">
+  <template>
+    <display-view filter-by="selected"></display-view>
+  </template>
+</test-fixture>
+<script>
+  suite('display-view-fixture', function () {
+    var displayView;
+
+    setup(function() {
+      displayView = fixture('display-view-fixture');
+    });
+
+    test('Displaying only selected items with unselected in data set', function(done) {
+      displayView.configuration = [
+        {
+          "name": "text input requires letter only",
+          "type": "text",
+          "selected": true,
+          "validation": {
+            "pattern": "[a-zA-Z]*",
+            "errorMessage": "Invalid input",
+            "autoValidate": true
+          }
+        },
+        {
+          "name": "numeric input w/ validation rule > 18",
+          "type": "number",
+          "selected": true,
+          "validation": {
+            "min": 18,
+            "errorMessage": "Less than 18",
+            "autoValidate": true
+          }
+        },
+        {
+          "name": "dropdown example",
+          "type": "dropdown",
+          "options": ["Option One", "Option Two", "Option Three"],
+          "selected": false
+        },
+        {
+          "name": "date picker",
+          "type": "datepicker",
+          "selected": true
+        },
+        {
+          "name": "Try typing 15 or 22",
+          "type": "moneypicker",
+          "selected": false,
+          "validation": {
+            "min": 18,
+            "errorMessage": "Less than 18",
+            "autoValidate": true
+          }
+        }
+      ];
+
+      flush(function () {
+        expectedItemsCount = 3;
+
+        listItems = Polymer.dom(displayView.root).querySelectorAll('display-item');
+        assert.equal(expectedItemsCount, listItems.length);
+
+        done();
+      });
+
+    });
+
+    test('Displaying only selected items', function() {
+      expectedItemsCount = 2;
+
+      displayView.configuration = [
+        {
+          "name": "text input requires letter only",
+          "type": "text",
+          "selected": true,
+          "validation": {
+            "pattern": "[a-zA-Z]*",
+            "errorMessage": "Invalid input",
+            "autoValidate": true
+          }
+        },
+        {
+          "name": "numeric input w/ validation rule > 18",
+          "type": "number",
+          "selected": true,
+          "validation": {
+            "min": 18,
+            "errorMessage": "Less than 18",
+            "autoValidate": true
+          }
+        }
+      ];
+
+      flush(function () {
+        listItems = Polymer.dom(displayView.root).querySelectorAll('display-item');
+        assert.equal(expectedItemsCount, listItems.length);
+      });
+
+    });
+
+  });
+</script>
+</body>
+</html>
