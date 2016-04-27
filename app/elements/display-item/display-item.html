@@ -8,6 +8,7 @@
 <link rel="import" href="../text-input/text-input.html" />
 <link rel="import" href="../number-input/number-input.html" />
 <link rel="import" href="../money-input/money-input.html" />
+<link rel="import" href="../datepicker-input/datepicker-input.html" />
 
 <dom-module id="display-item">
   <template>
@@ -33,7 +34,7 @@
     </template>
 
     <template is="dom-if" if="{{_isDatepicker(item.type)}}">
-      <paper-date-picker></paper-date-picker>
+      <datepicker-input item="{{item}}"></datepicker-input>
     </template>
 
     <template is="dom-if" if="{{_isMoneypicker(item.type)}}">
