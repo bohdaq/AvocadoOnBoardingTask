@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="router-conf">
+  <template>
+
+    <carbon-location route="{{route}}"
+                     use-hash-as-path></carbon-location>
+
+    <carbon-route route="{{route}}"
+                  pattern="/configuration"
+                  active="{{configurationActive}}"></carbon-route>
+
+    <carbon-route route="{{route}}"
+                  pattern="/display"
+                  active="{{displayActive}}"></carbon-route>
+
+  </template>
+
+  <script src="router-conf.js"></script>
+</dom-module>

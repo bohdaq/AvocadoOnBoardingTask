@@ -16,15 +16,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="datastore-service">
   <template>
     <iron-ajax
-      id="ajax"
+      auto
       url="../../configuration.json"
       handle-as="json"
-      last-response="{{configuration}}"></iron-ajax>
-    <iron-localstorage
-      name="configuration"
-      value="{{configuration}}"
-      on-iron-localstorage-load-empty="_requestData">
-    </iron-localstorage>
+      on-response="_handleResponse"></iron-ajax>
   </template>
 
   <script src="datastore-service.js"></script>
