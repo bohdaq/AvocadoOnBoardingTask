@@ -2,6 +2,7 @@
     {
       "name": "text input requires letter only",
       "type": "text",
+      "value": "dummy value",
       "selected": true,
       "validation": {
         "pattern": "[a-zA-Z]*",
@@ -12,6 +13,7 @@
     {
       "name": "numeric input w/ validation rule > 18",
       "type": "number",
+      "value": 21,
       "selected": true,
       "validation": {
         "min": 18,
@@ -28,11 +30,13 @@
     {
       "name": "date picker",
       "type": "datepicker",
+      "value": "Apr 18 2016",
       "selected": true
     },
     {
       "name": "Try typing 15 or 22",
       "type": "moneypicker",
+      "value": "1356",
       "selected": true,
       "validation": {
         "min": 18,
