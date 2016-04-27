@@ -6,16 +6,28 @@
 
     properties: {
       configuration: {
-        notify: true //2way data binding
+        type: Array,
+        notify: true, //2way data binding,
       }
     },
 
+    observers: [
+      '_configurationChanged(configuration.*)'
+    ],
+
     _handleResponse: function (e) {
-      this.configuration = e.detail.response;
+      if(localStorage.configuration){
+        this.configuration = JSON.parse(localStorage.configuration).base;
+      } else {
+        this.configuration = e.detail.response;
+        localStorage.configuration = JSON.stringify(this.configuration);
+      }
     },
 
-    _requestData: function () {
-      this.$.ajax.generateRequest();
-    }
+    _configurationChanged: function(newValue, oldValue) {
+       console.log('_configurationChanged datastore-service');
+
+       localStorage.configuration = JSON.stringify(newValue);
+     }
   });
 })();
