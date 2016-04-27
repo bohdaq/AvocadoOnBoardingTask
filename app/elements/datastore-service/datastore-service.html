@@ -10,11 +10,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-localstorage/iron-localstorage.html">
 
 
 <dom-module id="datastore-service">
   <template>
-    <iron-ajax auto url="../../configuration.json" handle-as="json" last-response="{{configuration}}"></iron-ajax>
+    <iron-ajax
+      id="ajax"
+      url="../../configuration.json"
+      handle-as="json"
+      last-response="{{configuration}}"></iron-ajax>
+    <iron-localstorage
+      name="configuration"
+      value="{{configuration}}"
+      on-iron-localstorage-load-empty="_requestData">
+    </iron-localstorage>
   </template>
 
   <script src="datastore-service.js"></script>
